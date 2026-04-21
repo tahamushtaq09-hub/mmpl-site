@@ -1,0 +1,192 @@
+<!DOCTYPE html><html>
+<head>
+<title>MMPL Player Profile</title><style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#111;
+    color:white;
+}
+
+/* HEADER */
+.header{
+    background:#009270;
+    padding:20px;
+    display:flex;
+    align-items:center;
+}
+
+.header img{
+    width:70px;
+    border-radius:10px;
+    margin-right:15px;
+}
+
+.name{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* JERSEY */
+.jersey{
+    margin-top:10px;
+}
+
+.label{
+    font-size:12px;
+    color:#ccc;
+    letter-spacing:1px;
+}
+
+.number{
+    font-size:42px;
+    font-weight:800;
+    color:#FFD700;
+}
+
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:space-around;
+    padding:10px;
+}
+
+.left,.right{
+    width:45%;
+}
+
+.left p,.right p{
+    background:#222;
+    padding:8px;
+    margin:5px;
+    border-radius:10px;
+}
+
+/* AWARDS */
+.awards{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:15px;
+}
+
+.award-card{
+    background:#222;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.award-details{
+    margin:15px;
+    background:#111;
+    padding:10px;
+    border-radius:10px;
+}
+</style></head><body><!-- HEADER --><div class="header">
+    <img src="sardal.jpg">
+    <div>
+        <div class="name">SARDAL</div>
+        <p><b>Age:</b> <span id="age"></span></p>    <div class="jersey">
+        <span class="label">Jersey No.</span><br>
+        <span class="number">12</span>
+    </div>
+
+    <p><b>Teams Played:</b> MM WARRIORS</p>
+</div>
+
+</div><!-- STATS --><div class="stats"><div class="left">
+<p>Matches: 11</p>
+<p>Career Runs: 160 </p>
+<p>Runs: 68</p>
+<p>Balls: 56</p>
+<p>Strike Rate: 121.42</p>
+<p>Highest Score: 63</p>
+<p>6s: 2</p>
+<p>4s: 7</p>
+<p>Wickets: 8</p>
+<p>Dot Balls: 28</p>
+</div><div class="right">
+<p>Career wickets: 14 </p>
+<p>Best Bowling: 4/12</p>
+<p>Runs Conceded: 114</p>
+<p>Overs: 11.5</p>
+<p>Economy: 9.65</p>
+<p>Ducks: 0</p>
+<p>Fifties: 1</p>
+<p>Maidens: 1</p>
+<p>Catches: 1</p>
+<p>Runouts: 2</p>
+</div></div><!-- AWARDS --><h3 style="text-align:center;">🏆 AWARDS</h3><div class="awards">
+<div onclick="showAward('orange')" class="award-card">🧡 Orange Cap</div>
+<div onclick="showAward('purple')" class="award-card">💜 Purple Cap</div>
+<div onclick="showAward('green')" class="award-card">💚 Green Cap</div>
+<div onclick="showAward('emerging')" class="award-card">🌟 Emerging Player</div>
+<div onclick="showAward('potm')" class="award-card">🔥 Player of the Match</div>
+<div onclick="showAward('pot')" class="award-card">👑 Player of Tournament</div>
+<div onclick="showFifties()" class="award-card">🏏 Fifties</div>
+</div><div id="awardDetails" class="award-details"></div><script>
+
+// 🔥 AGE FUNCTION
+function getAgeFull(dob){
+    let today = new Date();
+    let birthDate = new Date(dob);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+// 🔥 BIRTH DATE
+let birth = "2004-10-06";
+document.getElementById("age").innerText = getAgeFull(birth);
+
+
+// 🔥 AWARDS
+function showAward(type){
+
+let data = "";
+
+if(type === "orange"){
+    data = "<h3>🧡 Orange Cap</h3><p>2020 – 98 Runs</p>";
+}
+else if(type === "purple"){
+    data = "<h3>💜 Purple Cap</h3><p>2020 - 6 Wickets Season</p><p>2022 - 6 Wickets Season</p>";
+}
+else if(type === "green"){
+    data = "<p>No Green Cap</p>";
+}
+else if(type === "emerging"){
+    data = "<p>No Emerging Player</p>";
+}
+else if(type === "potm"){
+    data = `
+    <h3>🔥 POTM – 2</h3>
+    <p>🏏 2020 – 63 off 28 + 4 wicket</p>
+    <p>🎯 2022 – 4/12</p>
+    `;
+}
+else if(type === "pot"){
+    data = `
+    <h3>👑 Player of Tournament</h3>
+    <p>2020</p>
+    `;
+}
+
+document.getElementById("awardDetails").innerHTML = data;
+}
+
+
+// 🔥 FIFTIES
+function showFifties(){
+    document.getElementById("awardDetails").innerHTML =
+    "<h3>🏏 Fifty</h3><p>2020 – 63 (28 balls)</p>";
+}
+
+</script></body>
+</html>

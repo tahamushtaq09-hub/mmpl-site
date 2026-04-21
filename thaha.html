@@ -1,0 +1,204 @@
+<!DOCTYPE html><html>
+<head>
+<title>MMPL Player Profile</title><style>
+body{
+    margin:0;
+    font-family:Arial;
+    background:#111;
+    color:white;
+}
+
+/* HEADER */
+.header{
+    background:#009270;
+    padding:20px;
+    display:flex;
+    align-items:center;
+}
+
+.header img{
+    width:70px;
+    border-radius:10px;
+    margin-right:15px;
+}
+
+.name{
+    font-size:22px;
+    font-weight:bold;
+}
+
+/* JERSEY */
+.jersey{
+    margin-top:10px;
+}
+
+.label{
+    font-size:12px;
+    color:#ccc;
+    letter-spacing:1px;
+}
+
+.number{
+    font-size:42px;
+    font-weight:800;
+    color:#FFD700;
+}
+
+/* STATS */
+.stats{
+    display:flex;
+    justify-content:space-around;
+    padding:10px;
+}
+
+.left,.right{
+    width:45%;
+}
+
+.left p,.right p{
+    background:#222;
+    padding:8px;
+    margin:5px;
+    border-radius:10px;
+}
+
+/* AWARDS */
+.awards{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:15px;
+}
+
+.award-card{
+    background:#222;
+    padding:10px;
+    border-radius:10px;
+    text-align:center;
+    cursor:pointer;
+}
+
+.award-details{
+    margin:15px;
+    background:#111;
+    padding:10px;
+    border-radius:10px;
+}
+</style></head><body><!-- HEADER --><div class="header">
+    <img src="thaha.jpg">
+    <div>
+        <div class="name">THAHA</div>
+        <p><b>Age:</b> <span id="age"></span></p>    <div class="jersey">
+        <span class="label">Jersey No.</span><br>
+        <span class="number">09</span>
+    </div>
+
+    <p><b>Teams Played:</b> MM WARRIORS</p>
+</div>
+
+</div><!-- STATS --><div class="stats"><div class="left">
+<p>Matches: 30</p>
+<p>Career Runs: 429</p>
+<p>Runs: 347</p>
+<p>Balls: 191</p>
+<p>Strike Rate: 181.67</p>
+<p>Highest Score: 56</p>
+<p>6s: 31</p>
+<p>4s: 22</p>
+<p>Wickets: 12</p>
+<p>Dot Balls: 92</p>
+</div><div class="right">
+<p>Career wickets: 14</p>
+<p>Best Bowling: 1/1</p>
+<p>Runs Conceded: 303</p>
+<p>Overs: 32.4</p>
+<p>Economy: 9.28</p>
+<p>Ducks: 3</p>
+<p>Fifties: 3</p>
+<p>Maidens: 0</p>
+<p>Catches: 3</p>
+<p>Runouts: 4</p>
+</div>
+</div><!-- AWARDS --><h3 style="text-align:center;">🏆 AWARDS</h3><div class="awards">
+<div onclick="showAward('orange')" class="award-card">🧡 Orange Cap</div>
+<div onclick="showAward('purple')" class="award-card">💜 Purple Cap</div>
+<div onclick="showAward('green')" class="award-card">💚 Green Cap</div>
+<div onclick="showAward('emerging')" class="award-card">🌟 Emerging Player</div>
+<div onclick="showAward('potm')" class="award-card">🔥 Player of the Match</div>
+<div onclick="showAward('pot')" class="award-card">👑 Player of Tournament</div>
+<div onclick="showFifties()" class="award-card">🏏 Fifties</div>
+</div><div id="awardDetails" class="award-details"></div><script>
+
+// 🔥 AGE FUNCTION
+function getAgeFull(dob){
+    let today = new Date();
+    let birthDate = new Date(dob);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+// 🔥 SET BIRTH DATE
+let birth = "2003-08-02";
+
+// 🔥 SHOW AGE
+document.getElementById("age").innerText = getAgeFull(birth);
+
+
+// 🔥 AWARDS FUNCTION
+function showAward(type){
+
+let data = "";
+
+if(type === "orange"){
+    data = "<h3>🧡 Orange Cap</h3><p>2021 – 129 Runs</p><p>2026 – 91 Runs</p>";
+}
+else if(type === "purple"){
+    data = "<p>No Purple Cap</p>";
+}
+else if(type === "green"){
+    data = "<h3>💚 Green Cap</h3><p>2021 – 19 Dots</p><p>2024 – 23 Dots</p>";
+}
+else if(type === "emerging"){
+    data = "<p>No Emerging Player</p>";
+}
+else if(type === "potm"){
+    data = `
+    <h3>🔥 POTM – 6 Awards</h3>
+    <p><b>🏏 2020:</b> 50+ match-winning innings</p>
+    <p><b>⚡ 2021:</b> 24 off 5 balls</p>
+    <p><b>🏏 2024:</b> 14* off 10 (finisher)</p>
+    <p><b>🏏 2025:</b> 10* off 11 + impact</p>
+    <p><b>🏏 2026:</b> 6 off 4 & 1/3 bowling</p>
+    <p><b>⚡ 2026:</b> 51* off 14 (match winner)</p>
+    `;
+}
+else if(type === "pot"){
+    data = "<p>👑 2021 – Player of Tournament</p>";
+}
+
+document.getElementById("awardDetails").innerHTML = data;
+}
+
+// 🔥 FIFTIES FUNCTION
+function showFifties(){
+
+let fifties = 3;
+let data = "";
+
+if(fifties >= 3){
+    data = "<h3>🏏 Fifties</h3><p>2020 – 50+</p><p>2021 – 56 (20 balls)</p><p>2026 – 51* (14 balls)</p>";
+}else{
+    data = "<p>Less than 3 fifties</p>";
+}
+
+document.getElementById("awardDetails").innerHTML = data;
+}
+
+</script></body>
+</html>

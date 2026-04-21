@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MMPL Player Profile</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #111;
+    color: white;
+}
+
+/* HEADER */
+.header {
+    background: #009270;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    width: 70px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* JERSEY */
+.jersey {
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.number {
+    font-size: 42px;
+    font-weight: 800;
+    color: #FFD700;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.left, .right {
+    width: 45%;
+}
+
+.left p, .right p {
+    background: #222;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+/* AWARDS */
+.awards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.award-card {
+    background: #222;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.award-details {
+    margin: 10px;
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <img src="aftab.jpg">
+    <div>
+        <div class="name">AFTAB</div>
+        <p><b>Age:</b> <span id="age"></span></p>
+
+        <div class="jersey">
+            <span class="label">Jersey No.</span><br>
+            <span class="number">14</span>
+        </div>
+
+        <p><b>Teams Played:</b> MM WARRIORS, MM STRIKERS</p>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+
+<div class="left">
+<p>Matches: 23</p>
+<p>Runs: 5</p>
+<p>Balls: 16</p>
+<p>Strike Rate: 31.25</p>
+<p>Highest Score: 3*</p>
+<p>6s: 0</p>
+<p>4s: 0</p>
+<p>Wickets: 3</p>
+<p>Dot Balls: 12</p>
+</div>
+
+<div class="right">
+<p>Best Bowling: 2/7</p>
+<p>Runs Conceded: 79</p>
+<p>Overs: 5.3</p>
+<p>Economy: 14.36</p>
+<p>Ducks: 3</p>
+<p>Fifties: 0</p>
+<p>Maidens: 0</p>
+<p>Catches: 1</p>
+<p>Runouts: 0</p>
+</div>
+
+</div>
+
+<!-- AWARDS -->
+<h3 style="padding-left:10px;">🏆 AWARDS</h3>
+
+<div class="awards">
+<div onclick="showAward('orange')" class="award-card">🧡 Orange Cap</div>
+<div onclick="showAward('purple')" class="award-card">💜 Purple Cap</div>
+<div onclick="showAward('green')" class="award-card">💚 Green Cap</div>
+<div onclick="showAward('emerging')" class="award-card">🌟 Emerging Player</div>
+<div onclick="showAward('potm')" class="award-card">🔥 Player of the Match</div>
+<div onclick="showAward('pot')" class="award-card">👑 Player of Tournament</div>
+<div onclick="showFifties()" class="award-card">🏏 Fifties</div>
+</div>
+
+<div id="awardDetails" class="award-details"></div>
+
+<!-- SCRIPT -->
+<script>
+
+// 🔥 AGE SYSTEM
+function getAgeFull(dob){
+    let today = new Date();
+    let birthDate = new Date(dob);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+}
+
+document.getElementById("age").innerText = getAgeFull("2014-02-15");
+
+// 🔥 AWARDS
+function showAward(type) {
+
+let data = "";
+
+if(type === "orange") {
+    data = "<p>No Orange Cap</p>";
+}
+
+if(type === "purple") {
+    data = "<p>No Purple Cap</p>";
+}
+
+if(type === "green") {
+    data = "<p>No Green Cap</p>";
+}
+
+if(type === "emerging") {
+    data = "<p>2020 – Emerging Player</p>";
+}
+
+if(type === "potm") {
+    data = "<p>No POTM</p>";
+}
+
+if(type === "pot") {
+    data = "<p>No Player of Tournament</p>";
+}
+
+document.getElementById("awardDetails").innerHTML = data;
+}
+
+// 🔥 FIFTIES
+function showFifties() {
+
+let data = "<p>No Fifties Scored</p>";
+
+document.getElementById("awardDetails").innerHTML = data;
+}
+
+</script>
+
+</body>
+</html>
