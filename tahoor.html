@@ -123,7 +123,7 @@ body{
 <div onclick="showAward('purple')" class="award-card">💜 Purple Cap</div>
 <div onclick="showAward('green')" class="award-card">💚 Green Cap</div>
 <div onclick="showAward('emerging')" class="award-card">🌟 Emerging Player</div>
-<div onclick="showAward('potm')" class="award-card">🔥 Player of the match</div>
+<div onclick="showAward('potm')" class="award-card">🎖️ Player of the match</div>
 <div onclick="showAward('pot')" class="award-card">👑 Player of Tournament</div>
 <div onclick="showFifties()" class="award-card">🏏 Fifties</div>
 </div><div id="awardDetails" class="award-details"></div><script>
@@ -162,12 +162,12 @@ else if(type === "green"){
     data = "<p>No Green Cap</p>";
 }
 else if(type === "emerging"){
-    data = "<p>2021 – Emerging Player</p>";
+    data = "<h3>🌟 Emerging Player</h3><p>2021</p>";
 }
 else if(type === "potm"){
     data = `
-    <h3>🔥 POTM – 1</h3>
-    <p>🎯 2024 – 3/6 wickets (match-winning spell)</p>
+    <h3>🎖️ POTM – 1</h3>
+    <p>🎯 2024 – 3/6 wickets</p>
     `;
 }
 else if(type === "pot"){
