@@ -1,130 +1,209 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MMPL Players </title>
+<meta name="viewport"
+content="width=device-width,initial-scale=1">
+
+<title>MMPL Players</title>
+
 <style>
+
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background: linear-gradient(135deg,#111,#222);
-    color:white;
-    text-align:center;
+margin:0;
+font-family:Arial;
+background:#111;
 }
-header{
-    padding:20px;
-    font-size:28px;
-    font-weight:bold;
-    background:#000;
-    color:#ffcc00;
+
+/* HEADER */
+
+.header{
+background:#009270;
+color:white;
+padding:18px;
+font-size:28px;
+font-weight:bold;
+text-align:center;
 }
-.container{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    padding:20px;
-    gap:15px;
+
+.sub{
+background:#1b1b1b;
+color:#bbb;
+padding:10px;
+text-align:center;
+font-size:13px;
 }
+
+/* PLAYER LIST */
+
+.players{
+padding:8px;
+}
+
+/* ROW */
+
 .card{
-    background:#1c1c1c;
-    padding:15px 20px;
-    border-radius:12px;
-    width:180px;
-    box-shadow:0 0 10px rgba(255,204,0,0.3);
-    transition:0.3s;
+
+background:#1c1c1c;
+
+padding:18px;
+
+margin-bottom:8px;
+
+border-left:
+4px solid #009270;
+
+border-radius:8px;
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+text-decoration:none;
+
+color:white;
+
 }
-.card:hover{
-    transform:scale(1.05);
-    background:#2a2a2a;
-}
+
+
+/* NAME */
+
 .name{
-    font-size:18px;
-    font-weight:bold;
-    color:#fff;
+font-size:22px;
+font-weight:bold;
 }
-footer{
-    padding:15px;
-    background:#000;
-    color:#aaa;
-    margin-top:20px;
+
+/* ARROW */
+
+.arrow{
+font-size:22px;
+color:#009270;
 }
+
+.footer{
+text-align:center;
+padding:20px;
+color:#777;
+font-size:12px;
+}
+
 </style>
 </head>
-<body><header>MMPL Players </header><div class="container">
-    <a href="abdullah.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Abdullah</div>
-    </div>
+
+<body>
+
+
+<div class="header">
+MMPL PLAYERS
+</div>
+
+<div class="sub">
+Official Players List
+</div>
+
+
+<div class="players">
+
+
+<a href="abdullah.html" class="card">
+<div class="name">Abdullah</div>
+<div class="arrow">›</div>
 </a>
-    <a href="afnan.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Afnan</div>
-    </div>
+
+
+<a href="afnan.html" class="card">
+<div class="name">Afnan</div>
+<div class="arrow">›</div>
 </a>
-    <a href="aftab.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Aftab</div>
-    </div>
+
+
+<a href="aftab.html" class="card">
+<div class="name">Aftab</div>
+<div class="arrow">›</div>
 </a>
-    <a href="aqib.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Aqib</div>
-    </div>
+
+
+<a href="aqib.html" class="card">
+<div class="name">Aqib</div>
+<div class="arrow">›</div>
 </a>
-    <a href="hamdan.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Hamdan</div>
-    </div>
+
+
+<a href="hamdan.html" class="card">
+<div class="name">Hamdan</div>
+<div class="arrow">›</div>
 </a>
-    <a href="mu'aad.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Mu'aad</div>
-    </div>
+
+
+<a href="mu'aad.html" class="card">
+<div class="name">Mu'aad</div>
+<div class="arrow">›</div>
 </a>
-    <a href="nashwan.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Nashwan</div>
-    </div>
+
+
+<a href="nashwan.html" class="card">
+<div class="name">Nashwan</div>
+<div class="arrow">›</div>
 </a>
-    <a href="samhan.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Samhan</div>
-    </div>
+
+
+<a href="samhan.html" class="card">
+<div class="name">Samhan</div>
+<div class="arrow">›</div>
 </a>
-    <a href="sardal.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Sardal</div>
-    </div>
+
+
+<a href="sardal.html" class="card">
+<div class="name">Sardal</div>
+<div class="arrow">›</div>
 </a>
-    <a href="shammas.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Shammas</div>
-    </div>
+
+
+<a href="shammas.html" class="card">
+<div class="name">Shammas</div>
+<div class="arrow">›</div>
 </a>
-    <a href="tahoor.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Tahoor</div>
-    </div>
+
+
+<a href="tahoor.html" class="card">
+<div class="name">Tahoor</div>
+<div class="arrow">›</div>
 </a>
-    <a href="talal.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Talal</div>
-    </div>
+
+
+<a href="talal.html" class="card">
+<div class="name">Talal</div>
+<div class="arrow">›</div>
 </a>
-    <a href="thaha.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Thaha</div>
-    </div>
+
+
+<a href="thaha.html" class="card">
+<div class="name">Thaha</div>
+<div class="arrow">›</div>
 </a>
-    <a href="thahnoon.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Thahnoon</div>
-    </div>
+
+
+<a href="thahnoon.html" class="card">
+<div class="name">Thahnoon</div>
+<div class="arrow">›</div>
 </a>
-    <a href="uraiz.html" style="text-decoration:none;">
-    <div class="card">
-        <div class="name">Uraiz</div>
-    </div>
+
+
+<a href="uraiz.html" class="card">
+<div class="name">Uraiz</div>
+<div class="arrow">›</div>
 </a>
-</div><footer>MMPL Official Players List ©</footer></body>
+
+
+</div>
+
+
+<div class="footer">
+MMPL Official ©
+</div>
+
+</body>
 </html>
